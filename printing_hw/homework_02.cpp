@@ -8,11 +8,8 @@ using namespace std;
 
 int main()
 {
-	cout<<"*"<<endl;
-	cout<<"* *"<<endl;
-	cout<<"* * *"<<endl;
-	cout<<"* * * *"<<endl;
-	cout<<"* * * * *"<<endl;
+	for(int i; i<5; ++i) {cout<<string(i, "*")<<endl;}
+	
 
 	return 0;
 }
