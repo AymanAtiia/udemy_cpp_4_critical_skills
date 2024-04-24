@@ -8,7 +8,7 @@ using namespace std;
 
 int main()
 {
-	for(int i; i<5; ++i) {cout<<string(i, "*")<<endl;}
+	for(int i=1; i<6; ++i) {cout<<string(i, '*')<<endl;}
 	
 
 	return 0;
