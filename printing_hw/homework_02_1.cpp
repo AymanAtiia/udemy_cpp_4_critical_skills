@@ -1,11 +1,37 @@
-#include<iostream>
-using namespace std;
+#include <iostream>
+#include <string>
 
-int main()
-{
-	for(int i=1; i<10;i+=2) {cout<<string((9-i)/2,' ')<<string(i,'*')<<endl;}
-	for(int i=7; i>0;i-=2) {cout<<string((9-i)/2,' ')<<string(i,'*')<<endl;}
-	
+int main() {
+    int rows = 8; // Total number of rows in the pyramid
 
-	return 0;
+    // Loop through each row
+    for (int i = 0; i < rows; ++i) {
+        // Print leading spaces for each row
+        for (int space = 0; space < rows - i - 1; ++space) {
+            std::cout << "  "; // Two spaces for better alignment
+        }
+
+        // Print asterisks for each row. The number of asterisks is 2*i + 1
+        for (int star = 0; star < 2 * i + 1; ++star) {
+            std::cout << "* ";
+        }
+
+        // Move to the next line after each row
+        std::cout << std::endl;
+    }
+    
+    for (int i = rows-2; i >= 0; --i) {
+        for (int space = 0; space < rows - i - 1; ++space) {
+            std::cout << "  "; 
+        }
+
+        for (int star = 0; star < 2 * i + 1; ++star) {
+            std::cout << "* ";
+        }
+
+        std::cout << std::endl;
+    }
+
+
+    return 0;
 }
