@@ -6,7 +6,7 @@ int main()
 {
   int n;
   int in_arr[1000] = {0};
-  int reverse_arr[1000] = {0};
+  int value;
   bool pal = true;
   cin>>n;
 
@@ -15,9 +15,9 @@ int main()
   
   for (int i=0;i<n;++i) 
   {
-    reverse_arr[i] = in_arr[n-i-1];
+    value = in_arr[n-i-1];
     
-    if(!(reverse_arr[i] == in_arr[i])) { pal = false;}
+    if(!(value == in_arr[i])) { pal = false;}
     }
 
   
