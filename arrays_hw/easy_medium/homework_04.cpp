@@ -13,7 +13,7 @@ int main()
   
   for (int i=0;i<n;++i) {cin>>in_arr[i];}
   
-  for (int i=0;i<n;++i) 
+  for (int i=0;i<n/2;++i) 
   {
     value = in_arr[n-i-1];
     
