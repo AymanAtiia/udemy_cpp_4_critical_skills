@@ -6,7 +6,6 @@ int main()
 {
   int n;
   cin>>n;
-  int value;
   int count = 0;
   int in_arr[200] = {0};
 
