@@ -1,7 +1,9 @@
 #include<iostream>
 
 using namespace std;
-
+/*
+Problem : Read a string of letters and then compress each group of same letter.
+*/
 int main()
 {
   string s;

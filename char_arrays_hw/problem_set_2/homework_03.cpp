@@ -1,7 +1,9 @@
 #include<iostream>
 
 using namespace std;
-
+/*
+Problem: Read a very long string of digits (at least 6 digits), and add 5555 to it.
+*/
 int main()
 {
   string s;
@@ -9,38 +11,38 @@ int main()
   // string result = s;
   int print_ind = 50;
   char result[print_ind+1];
-  int num_fives = 4;
   int rem = 0;
-  int ind = (int)s.size()-1;
+  int count = 0;
+  int num = 0;
   
-  while(num_fives)
+  for(int i=(int)s.size()-1; i>=0;--i)
   {
-    int num = s[ind] - '0' + 5 + rem;
-    result[print_ind] = (char) num%10 + '0';
-    rem = num/10;
-    cout<<num;
-    --ind;
-    --num_fives;
-    if(!num_fives && rem) {result[print_ind-1] = (char) (rem + s[ind-1] - '0');break;}
-    --print_ind;
+  	num = s[i] - '0' + rem;
+  	if(count<4) { num += 5 ; ++count;}
+  	result[print_ind] = (char) (num%10 + '0');
+  	rem = num/10;
+  	--print_ind;
+  	if(i == 0 && count <4) 
+  	{ 
+  	while(count<4) 
+  	{
+  	 num = '5' - '0' + rem;
+  	 result[print_ind] = (char) (num%10 + '0');
+  	 rem = rem/10;
+  	 --print_ind; 
+  	 ++count; 
+  	}
+  	}
+  	if(i == 0 && rem) {result[print_ind] = (char) (rem + '0');--print_ind;}
+  	
   }
-  /*
-  for(int i=(int)s.size()-1;i>=0;--i)
-  {
-    if(num_fives == 0) {break;}
-    int num = s[i] - '0' + 5 + rem;
-    result[i] = (char) num%10 + '0';
-    rem = num/10;
-    --num_fives;
-    // result[i] = (char) num + '0';
-    //cout<<num;
-  }
-  */
-  for(int i=print_ind;;++i) 
-  {
-    if(!(result[i] >= '0' && result[i] <= '9')) {break;}
+  
+
+  for(int i=print_ind+1;i<51;++i) 
+  { 
     cout<<result[i];
   }
+ 
   cout<<endl;
   return 0;
 }
