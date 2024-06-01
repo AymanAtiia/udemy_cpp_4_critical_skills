@@ -52,14 +52,28 @@ int main()
 	  // cout<<"neighor is : "<<neighbor<<endl;
 	  if(neighbor == curr)
 	  {
-	  	ni = ni + di[d];
-	  	nj = nj + dj[d]; // take additional step in the same direction
 	  	
-	  	if(ni>=0 && ni<n && nj>=0 && nj<n)
+	  	
+	  	int o_ni = r - di[d];
+	  	int o_nj = c - dj[d];
+	  	// cout<<"here : "<<o_ni<<" "<<o_nj<<endl;
+	  	if(o_ni>=0 && o_ni<n && o_nj>=0 && o_nj<n)
 	  	{
-	  	 char neighbor = arr[ni][nj];
-	  	 if(neighbor == curr) {is_won = true;}
-	  	}	
+	  	 char neighbor = arr[o_ni][o_nj];
+	  	 if(neighbor == curr) {is_won = true; break;}
+	  	}
+	  	
+	  	
+	  	int nni = ni + di[d];
+	  	int nnj = nj + dj[d]; // take additional step in the same direction
+	  	
+	  	if(nni>=0 && nni<n && nnj>=0 && nnj<n)
+	  	{
+	  	 char neighbor = arr[nni][nnj];
+	  	 if(neighbor == curr) {is_won = true; break;}
+	  	}
+	  		
+	  	
 	  	
 	  }
 	  
@@ -82,7 +96,8 @@ int main()
     
     ++idx;
     ++n_moves;
-    if(n_moves >= n) {cout<<"Tie."<<endl;}
+    
+    if(n_moves > (n*n) && !is_won) {cout<<"Tie."<<endl; break;}
     idx %= 2; 
   }
      
