@@ -27,6 +27,7 @@ int main()
   int di[8] = {0, 0, 1, -1, 1, 1, -1, -1};
   int dj[8] = {1, -1, 0, 0, 1, -1, 1, -1};
   int idx = 0;
+  int n_moves = 0;
   while(!is_won)
   {
   
@@ -80,6 +81,8 @@ int main()
     if(is_won) {cout<<"Player "<<players[idx] << " has won."<<endl;}
     
     ++idx;
+    ++n_moves;
+    if(n_moves >= n) {cout<<"Tie."<<endl;}
     idx %= 2; 
   }
      
