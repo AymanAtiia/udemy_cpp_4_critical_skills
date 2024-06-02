@@ -92,7 +92,7 @@ int main()
     cout<<endl;
     }
     
-    if(is_won) {cout<<"Player "<<players[idx] << " has won."<<endl;}
+    if(is_won) {cout<<"Player "<<players[idx] << " has won."<<endl; break;}
     
     ++idx;
     ++n_moves;
