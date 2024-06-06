@@ -1,5 +1,5 @@
 #include<iostream>
-// Problem : Array sum
+// Problem : Array average
 using namespace std;
 double arr_av(int arr[], int len)
 {
