@@ -1,15 +1,18 @@
 #include<iostream>
 /*
 Problem : Given array, change each element at position i to be the maximum of
-numbers from i to end of array.
+numbers from index i to end of array
+E.g. input 1 3 5 7 4 2 ⇒ [7, 7, 7, 7, 4, 2]
+Void right_max(int arr[], int len, int start_position = 0);
 */
 
 using namespace std;
 void right_max(int arr[], int len, int start)
 {
-  if (len == 0) {return;}
-  right_max(arr, len-1 , start+1);
-  arr[len] = max(arr[len], arr[len+1]);
+
+  if (start == len-1) {return;}
+  right_max(arr, len, start+1);
+  arr[start] = max(arr[start], arr[start+1]);
 }
 
 int main()
