@@ -33,12 +33,14 @@ int main()
       int specilaization;
       string name;
       bool status;
-      
       cin>>specilaization>>name>>status;
-      string temp = name;
-      if(status) {temp = temp + " urgent"; data[specilaization].insert(data[specilaization].begin(), temp);}
-      else {temp = temp + " normal"; data[specilaization].push_back(temp);}
-      
+      if(data[specilaization].size()>5) {cout<<"sorry we can't add more patients at the moment."<<endl;}
+      else
+      {
+	      string temp = name;
+	      if(status) {temp = temp + " urgent"; data[specilaization].insert(data[specilaization].begin(), temp);}
+	      else {temp = temp + " normal"; data[specilaization].push_back(temp);}
+      }
     }
     else if(choice == 2)
     {
